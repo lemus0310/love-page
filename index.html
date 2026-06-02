@@ -17,13 +17,16 @@
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:'Poppins', sans-serif;
+    font-family:'Poppins',sans-serif;
 }
 
 body{
 
-    height:100vh;
-    overflow:hidden;
+    min-height:100vh;
+
+    overflow-x:hidden;
+    overflow-y:auto;
+
     position:relative;
 
     background:
@@ -31,7 +34,9 @@ body{
 
     display:flex;
     justify-content:center;
-    align-items:center;
+    align-items:flex-start;
+
+    padding:25px 12px;
 
     color:white;
 
@@ -39,11 +44,27 @@ body{
 
 }
 
+/* SCROLL */
+
+body::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+body::-webkit-scrollbar-thumb{
+
+    background:#9f71ff;
+
+    border-radius:20px;
+
+}
+
 /* INTRO */
 
 .intro{
 
-    position:absolute;
+    position:fixed;
 
     inset:0;
 
@@ -64,11 +85,13 @@ body{
 
 .intro h1{
 
-    font-size:3.2rem;
+    font-size:3rem;
 
     letter-spacing:6px;
 
     animation:fadeIn 2s ease;
+
+    text-align:center;
 
 }
 
@@ -78,7 +101,7 @@ body{
 
     color:#d8c8ff;
 
-    font-size:1rem;
+    text-align:center;
 
     animation:fadeIn 3s ease;
 
@@ -106,12 +129,12 @@ body{
 
     position:relative;
 
-    width:92%;
+    width:100%;
     max-width:850px;
 
-    padding:55px;
+    padding:40px 28px;
 
-    border-radius:40px;
+    border-radius:35px;
 
     background:rgba(255,255,255,0.08);
 
@@ -128,6 +151,9 @@ body{
     animation:cardIn 2s ease;
 
     transition:0.6s;
+
+    margin-top:35px;
+    margin-bottom:35px;
 
 }
 
@@ -165,9 +191,9 @@ body{
 
 .top{
 
-    letter-spacing:5px;
+    letter-spacing:4px;
 
-    font-size:13px;
+    font-size:12px;
 
     color:#d8c8ff;
 
@@ -177,7 +203,7 @@ body{
 
 .icon{
 
-    font-size:5rem;
+    font-size:4.5rem;
 
     margin-bottom:20px;
 
@@ -187,9 +213,11 @@ body{
 
 .title{
 
-    font-size:2.9rem;
+    font-size:2.3rem;
 
     margin-bottom:25px;
+
+    line-height:1.25;
 
     background:
     linear-gradient(to right,#ffffff,#dcbcff);
@@ -201,9 +229,9 @@ body{
 
 .text{
 
-    font-size:1.15rem;
+    font-size:1rem;
 
-    line-height:2.2;
+    line-height:2;
 
     color:#eee7ff;
 
@@ -221,9 +249,9 @@ body{
 
     justify-content:center;
 
-    gap:20px;
+    gap:15px;
 
-    margin-top:45px;
+    margin-top:40px;
 
     flex-wrap:wrap;
 
@@ -237,13 +265,13 @@ button{
 
     border:none;
 
-    padding:18px 34px;
+    padding:16px 22px;
 
-    border-radius:20px;
+    border-radius:18px;
 
     cursor:pointer;
 
-    font-size:1rem;
+    font-size:0.96rem;
 
     font-weight:600;
 
@@ -253,7 +281,7 @@ button{
 
 }
 
-/* CARTA */
+/* BOTON CARTA */
 
 .btn1{
 
@@ -271,7 +299,7 @@ button{
 
 }
 
-/* MOMENTOS */
+/* BOTON MOMENTOS */
 
 .btn2{
 
@@ -290,8 +318,8 @@ button{
 button:hover{
 
     transform:
-    translateY(-6px)
-    scale(1.05);
+    translateY(-4px)
+    scale(1.03);
 
 }
 
@@ -329,11 +357,13 @@ button:hover::before{
 
 .mensaje{
 
-    margin-top:35px;
+    margin-top:30px;
 
-    font-size:1.25rem;
+    font-size:1rem;
 
-    min-height:80px;
+    min-height:120px;
+
+    line-height:1.8;
 
     opacity:0;
 
@@ -357,11 +387,13 @@ button:hover::before{
 
 .bottom{
 
-    margin-top:30px;
+    margin-top:25px;
 
     color:#cbb7f7;
 
-    font-size:0.95rem;
+    font-size:0.92rem;
+
+    line-height:1.7;
 
 }
 
@@ -373,9 +405,9 @@ button:hover::before{
 
     inset:0;
 
-    background:rgba(0,0,0,0.55);
+    background:rgba(0,0,0,0.7);
 
-    backdrop-filter:blur(8px);
+    backdrop-filter:blur(10px);
 
     display:flex;
 
@@ -389,6 +421,8 @@ button:hover::before{
 
     z-index:99999;
 
+    padding:15px;
+
 }
 
 .modal.show{
@@ -398,10 +432,16 @@ button:hover::before{
 
 }
 
+/* CARTA */
+
 .carta{
 
-    width:90%;
+    width:100%;
     max-width:650px;
+
+    max-height:90vh;
+
+    overflow-y:auto;
 
     background:
     linear-gradient(
@@ -410,9 +450,9 @@ button:hover::before{
         #f5e9ff
     );
 
-    border-radius:30px;
+    border-radius:28px;
 
-    padding:40px;
+    padding:30px 24px;
 
     color:#6d4cb3;
 
@@ -427,7 +467,7 @@ button:hover::before{
 
     margin-bottom:20px;
 
-    font-size:2rem;
+    font-size:1.8rem;
 
 }
 
@@ -435,19 +475,21 @@ button:hover::before{
 
     line-height:2;
 
-    font-size:1.05rem;
+    font-size:0.98rem;
 
 }
 
+/* CLOSE */
+
 .close{
 
-    margin-top:30px;
+    margin-top:25px;
 
     background:#8e5cff;
 
     color:white;
 
-    padding:12px 24px;
+    padding:12px 22px;
 
     border:none;
 
@@ -461,7 +503,7 @@ button:hover::before{
 
 .heart{
 
-    position:absolute;
+    position:fixed;
 
     font-size:22px;
 
@@ -525,14 +567,18 @@ button:hover::before{
     from{
 
         opacity:0;
-        transform:translateY(40px);
+        transform:
+        scale(0.8)
+        rotate(-3deg);
 
     }
 
     to{
 
         opacity:1;
-        transform:translateY(0);
+        transform:
+        scale(1)
+        rotate(0);
 
     }
 
@@ -610,25 +656,73 @@ button:hover::before{
 
 }
 
-/* RESPONSIVE */
+/* DESKTOP */
 
-@media(max-width:700px){
+@media(min-width:768px){
+
+    body{
+
+        align-items:center;
+
+        padding:40px 20px;
+
+    }
 
     .card{
 
-        padding:35px;
+        padding:55px;
 
     }
 
     .title{
 
-        font-size:2rem;
+        font-size:2.9rem;
 
     }
 
     .text{
 
+        font-size:1.15rem;
+
+    }
+
+    .buttons{
+
+        flex-wrap:nowrap;
+
+    }
+
+    button{
+
+        padding:18px 34px;
+
         font-size:1rem;
+
+    }
+
+    .mensaje{
+
+        font-size:1.2rem;
+
+        min-height:80px;
+
+    }
+
+    .carta{
+
+        padding:40px;
+
+    }
+
+    .carta h2{
+
+        font-size:2rem;
+
+    }
+
+    .carta p{
+
+        font-size:1.05rem;
 
     }
 
@@ -722,7 +816,6 @@ button:hover::before{
 
             A veces llegan personas que sin darse cuenta, cambian completamente la forma en la que uno mira los días,
             y usted hizo exactamente eso, aun que yo sé que la mayoría de veces no nos entendemos, pero mi corazón la ama muchisimo,
- 
             gracias por coincidir conmigo en este mundo tan extraño y por hacer que todo se sienta un poquito más bonito. ✨
 
         </p>
@@ -815,7 +908,7 @@ function momentos(){
 
         "Mi corazón la ama mucho 💖",
 
-        "Que nalgotas mi amor, son mías"
+        "Que nalgotas mi amor, son mías 😭💜"
 
     ];
 
